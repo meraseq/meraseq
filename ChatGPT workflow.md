@@ -8,3 +8,32 @@
 - The output of the quantification is typically a matrix of counts, where each row corresponds to a gene or transcript, and each column corresponds to a sample or cell.
 - The count matrix can be further processed using tools such as DESeq2 or limma-voom to identify differentially expressed genes between different conditions or groups.
 - Finally, we discussed how to convert a .BAM file containing aligned reads to a .loom file format, which can be used with tools such as scvelo for further analysis of single-cell RNA-seq data.
+
+
+                         +------------+            +------------+
+                         |  Raw reads |            |  Aligned   |
+                         |  in .FASTQ |            |  reads in |
+                         |  format    |            |  .BAM     |
+                         +-----+------+            +-----+------+
+                               |                          |
+                               v                          v
+                         +------------+            +------------+
+                         |  Alignment |            |  Gene/     |
+                         |  to ref    |            |  transcript|
+                         |  genome/   |            |  quantifi-|
+                         |  transcript|            |  cation   |
+                         +-----+------+            +-----+------+
+                               |                          |
+                               v                          v
+                         +------------+            +------------+
+                         |  Differential|            |  Further   |
+                         |  expression|            |  analysis |
+                         |  analysis  |            |  with     |
+                         +-----+------+            |  tools    |
+                               |                  |  such as  |
+                               v                  |  scvelo   |
+                         +------------+            +------------+
+                         |  Results   |            |  Results   |
+                         |  of DESeq2/|            |  of       |
+                         |  limma-voom|            |  scvelo    |
+                         +------------+            +------------+
